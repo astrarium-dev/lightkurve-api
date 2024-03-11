@@ -1,5 +1,5 @@
 # lightkurve-api
-
+![Tests](https://github.com/astrarium-dev/lightkurve-api/actions/workflows/tests.yaml/badge.svg)
 Setup:
 
 setup python virtual environment using
