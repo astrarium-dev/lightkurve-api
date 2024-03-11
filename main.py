@@ -28,26 +28,28 @@ async def generate_lightcurve_plot(request: Request):
     try:
         # Fetch the light curve data using Lightkurve
         lc = lk.search_lightcurve(target=target, mission="Kepler").download().PDCSAP_FLUX
-
         # Plot the light curve
         lc.plot()
         plt.xlabel("Time (days)")
         plt.ylabel("Flux")
         plt.title("Light Curve")
 
-        # Convert plot to bytes
-        buffer = BytesIO()
-        plt.savefig(buffer, format='png')
-        buffer.seek(0)
-        plt.close()
-
-        # Encode plot bytes to base64 string
-        plot_base64 = base64.b64encode(buffer.read()).decode('utf-8')
-
+        plot_base64 = convert_plot_to_base64(plt)
         # Return the base64 encoded plot
         return JSONResponse(content=jsonable_encoder({'plot': plot_base64}), status_code=200)
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+def convert_plot_to_base64(plt) -> str:
+    buffer = BytesIO()
+    plt.savefig(buffer, format='png')
+    buffer.seek(0)
+    plt.close()
+
+    # Encode plot bytes to base64 string
+    plot_base64 = base64.b64encode(buffer.read()).decode('utf-8')
+    return plot_base64
+
 
 if __name__ == '__main__':
     import uvicorn

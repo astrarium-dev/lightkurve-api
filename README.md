@@ -11,5 +11,8 @@ activate virtual environment
 install python packages
 `pip install -r requirements.txt`
 
+running tests locally
+`python test`
+
 run main server file
-`python main.py`
+`python setup.py`
