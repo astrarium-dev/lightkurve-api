@@ -1,13 +1,9 @@
-[project]
-name = 'lightkurve-api'
-version = '0.0.0'
-
 [build-system]
-requires = ["hatchling>=0.22", "hatch-vcs>=0.2"]
-build-backend = "hatchling.build"
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
 
 [tool.pytest.ini_options]
-addopts = "--cov=lkutils"
+addopts = "--cov=slapping"
 testpaths = [
     "tests",
 ]
