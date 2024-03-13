@@ -1,12 +1,12 @@
 name: Tests
 
 on:
-  - pull_request
-  - push
+  pull_request:
+    types: [closed]
+  push:
 
 jobs:
   test:
-    if: github.event.pull_request.merged == true
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
