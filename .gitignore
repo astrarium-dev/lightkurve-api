@@ -5,6 +5,7 @@ venv/
 *.whl
 *.png
 /tests/.coverage
+/src/lightkurve_api.egg-info/*
 /src/lightkurve_api.egg-info/dependency_links.txt
 /src/lightkurve_api.egg-info/not-zip-safe
 /src/lightkurve_api.egg-info/PKG-INFO
