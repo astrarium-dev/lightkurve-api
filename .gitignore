@@ -9,7 +9,6 @@ venv/
 /src/lightkurve_api.egg-info/dependency_links.txt
 /src/lightkurve_api.egg-info/not-zip-safe
 /src/lightkurve_api.egg-info/PKG-INFO
-/requirements.txt
 /src/lightkurve_api.egg-info/requires.txt
 /src/lightkurve_api.egg-info/SOURCES.txt
 /src/lightkurve_api.egg-info/top_level.txt
